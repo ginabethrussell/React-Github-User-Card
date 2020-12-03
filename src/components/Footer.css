@@ -1,0 +1,21 @@
+.footer {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px 0;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    border-top: 2px double black;
+    justify-content: center;
+    align-items: center;
+}
+.footer img {
+    width: 35px;
+    margin-right: 35px;
+}
+
+.footer p {
+    font-size: 1.6rem;
+    color: firebrick;
+}

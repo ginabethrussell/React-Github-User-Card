@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import UserCard from './components/UserCard';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const user = 'ginabethrussell';
 
@@ -63,6 +64,7 @@ class App extends React.Component {
         <Header />
         <UserCard user={this.state.user} userData={this.state.userData}/>
         <button onClick={() => this.updateUser('mbr4477')}>Check out MBR4477</button>
+        <Footer />
       </div>
     );
   } 

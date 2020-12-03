@@ -1,0 +1,26 @@
+.user {
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid #888888;
+    box-shadow: 5px 10px #888888;
+    padding: 20px;
+    margin-top: 25px;
+    display: flex;
+}
+.user-card-wrapper h3 {
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.user-title-wrapper {
+    width: 30%;
+}
+.user-title-wrapper h2{
+    
+    font-size: 1.8rem;
+}
+.user-title-wrapper img {
+    width: 200px;
+    border-radius: 50%;
+}

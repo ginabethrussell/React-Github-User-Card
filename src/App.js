@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import UserCard from './components/UserCard';
+import Header from './components/Header';
 
 const user = 'ginabethrussell';
 
@@ -15,7 +16,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-    axios.get(`https://api.github.com/users/${user}`)
+    axios.get(`https://api.github.com/users/${this.state.user}`)
     .then(response => {
       console.log(response.data);
       this.setState({
@@ -27,29 +28,41 @@ class App extends React.Component {
   }
 
   // componentDidUpdate() {
+  //   console.log(this.state.user);
   //   axios.get(`https://api.github.com/users/${this.state.user}`)
   //   .then(response => {
-  //     console.log(this.state.user)
-  //     this.setState({
-  //       ...this.state,
-  //       userData: response.data
-  //     })
+  //     console.log(response.data)
+  //     // this.setState({
+  //     //   ...this.state,
+  //     //   userData: response.data
+  //     // })
   //   })
   //   .catch(err => console.log(err))
   // }
  
-  // updateUser = (newUser) => {
-  //   this.setState({
-  //     ...this.state,
-  //     user: newUser
-  //   })
-  // }
+  updateUser = (newUser) => {
+    console.log(newUser, 'calling update user');
+
+    axios.get(`https://api.github.com/users/${newUser}`)
+    .then(response => {
+      console.log(response.data)
+      this.setState({
+        ...this.state,
+        user: newUser,
+        userData: response.data
+      })
+    })
+    .catch(err => console.log(err))
+  }
 
   
   render(){
+    console.log('render invoked', this.state.user)
     return (
       <div className="App">
-        <UserCard userData={this.state.userData}/>
+        <Header />
+        <UserCard user={this.state.user} userData={this.state.userData}/>
+        <button onClick={() => this.updateUser('mbr4477')}>Check out MBR4477</button>
       </div>
     );
   } 

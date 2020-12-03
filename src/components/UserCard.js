@@ -6,11 +6,13 @@ class UserCard extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            user: this.props.user,
             followers: []
         }
     }
     componentDidMount(){
-        axios.get(`https://api.github.com/users/${this.props.userData.login}/followers`)
+        console.log(this.state.user);
+        axios.get(`https://api.github.com/users/${this.state.user}/followers`)
         .then(response => {
             this.setState({
                 ...this.state,
@@ -20,7 +22,6 @@ class UserCard extends React.Component {
         .catch(err => console.log(err))
     }
     render(){
-        // console.log(this.state.followers)
         return(
             <div className='user-card-wrapper'>
                 <h3>{this.props.userData.name}</h3>

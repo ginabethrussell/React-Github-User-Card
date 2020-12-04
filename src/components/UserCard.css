@@ -24,3 +24,28 @@
     width: 200px;
     border-radius: 50%;
 }
+
+.user-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info-wrapper li {
+    list-style: none;
+    font-size: 1.6rem;
+    margin: 5px 0;
+}
+
+.user-info-wrapper li a {
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-top: 10px;
+    color: #888888;
+}
+
+.user-info-wrapper li a:hover {
+    color: firebrick;
+}

@@ -4,25 +4,10 @@ import Follower from './Follower';
 import './UserCard.css'
 
 class UserCard extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            user: this.props.user,
-            followers: []
-        }
-    }
-    componentDidMount(){
-        console.log(this.state.user);
-        axios.get(`https://api.github.com/users/${this.state.user}/followers`)
-        .then(response => {
-            this.setState({
-                ...this.state,
-                followers: response.data
-            })
-        })
-        .catch(err => console.log(err))
-    }
+    
     render(){
+        console.log('followers:', this.props.followers)
+        console.log(this.props)
         return(
             <div className='user-card-wrapper'>
                 <div className='user'>
@@ -32,8 +17,13 @@ class UserCard extends React.Component {
                     </div>
                     <div className='user-info-wrapper'>
                         <ul>
+                            <li>Username: {this.props.userData.name}</li>
                             <li>Bio: {this.props.userData.bio}</li>
                             <li>Location: {this.props.userData.location}</li>
+                            <li>Hireable: {this.props.userData.hireable}</li>
+                            <li>Public Repos: {this.props.userData.public_repos}</li>
+                            <li>Twitter username: {this.props.userData.twitter_username}</li>
+                            <li><a href={this.props.userData.html_url}>GitHub Profile</a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,7 +31,7 @@ class UserCard extends React.Component {
                 <div className='followers-wrapper'>
                     
                         {
-                            this.state.followers.map(follower => (
+                            this.props.followers.map(follower => (
                                 <Follower key={follower.avatar_url} followerData={follower} />
                                 )
                             )

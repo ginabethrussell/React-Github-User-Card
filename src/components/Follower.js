@@ -9,7 +9,7 @@ class Follower extends React.Component {
             <div className='follower-wrapper'>
                 <h3> Username: {this.props.followerData.login}</h3>
                 <img src={this.props.followerData.avatar_url} alt='user avatar'/>
-                <a href={this.props.followerData.html_url}>GitHub Profile</a>
+                <a href={this.props.followerData.html_url} target='_blank' >GitHub Profile</a>
             </div>
         )
     }

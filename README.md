@@ -8,7 +8,7 @@ This project explored and practiced the concepts and techniques of `React Lifecy
 
 ### Project Features
 
-- Fetches data from the Github API for an initial seed Github user and the user's followers
+- Fetches data from the GitHub API for an initial seed GitHub user and the user's followers
 - Displays the user data on the DOM using UserCard and Follower components
 - Uses class components to build and render components which hold state
 - Provides an input form inside the Header component to allow a new user to be searched and displayed
@@ -22,7 +22,7 @@ Initial project design was planned using a Whimsical flowchart to design and mod
 ![whimsical image](https://raw.githubusercontent.com/ginabethrussell/React-Github-User-Card/main/public/app_plan.png)
 
 #### Modifications of Initial Plan During Build
-- added 2 additional state variable properties, userData and followers
+- Added 2 additional state variable properties, userData and followers
 - Moved form input to the Header instead of as separate Form component
 - Moved followers state variable up to App component instead of controlling in lower UserCard component
 - Kept Lifecycle methods in top level App component

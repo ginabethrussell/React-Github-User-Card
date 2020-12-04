@@ -1,6 +1,6 @@
 # React GitHub User Card 
 * Site deployed with Netlify
-* [https://gbr-github-usercards.netlify.app/](https://gbr-github-usercards.netlify.app/])
+* [https://gbr-github-usercards.netlify.app](https://gbr-github-usercards.netlify.app)
 
 ## Lambda School Advanced React Module Project: Component Lifecycle Methods
 

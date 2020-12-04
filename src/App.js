@@ -17,10 +17,10 @@ class App extends React.Component {
     }
   }
 
+  // Get initial user's github info and followers
   componentDidMount(){
     axios.get(`https://api.github.com/users/${this.state.user}`)
     .then(response => {
-      console.log(response.data.followers_url);
       this.setState({
         ...this.state,
         userData: response.data
@@ -30,7 +30,6 @@ class App extends React.Component {
     .then(url => {
       axios.get(url)
       .then(response => {
-        console.log(response.data)
         this.setState({
           ...this.state,
             followers: response.data
@@ -40,37 +39,41 @@ class App extends React.Component {
     .catch(err => console.log(err))
   }
  
+  // allow newUser to be requested from within Header and passed up to App
   updateUser = (newUser) => {
-    console.log(newUser, 'calling update user');
-    if (newUser !== this.state.user){
-      axios.get(`https://api.github.com/users/${newUser}`)
-      .then(response => {
-        console.log(response.data)
-        this.setState({
-          ...this.state,
-          user: newUser,
-          userData: response.data
-        });
-        return response.data.followers_url;
+    if (newUser !== ''){
+      this.setState({
+        ...this.state,
+        user: newUser
       })
-      .then(url => {
-        axios.get(url)
+    }
+  }
+
+  // Request newUser's data and followers after user state changes
+   componentDidUpdate(prevProps, prevState){
+     if (this.state.user !== prevState.user){
+      axios.get(`https://api.github.com/users/${this.state.user}`)
         .then(response => {
           this.setState({
             ...this.state,
-              followers: response.data
+            userData: response.data
+          });
+          return response.data.followers_url;
+        })
+        .then(url => {
+          axios.get(url)
+          .then(response => {
+            this.setState({
+              ...this.state,
+                followers: response.data
+            })
           })
         })
-      })
-      .catch(err => console.log(err))
-    }
-  }
-   
+       .catch(err => console.log(err))
+     }
+   }
 
-  
   render(){
-    console.log('render invoked', this.state.user)
-    console.log(this.state.userData);
     return (
       <div className="App">
         <Header updateUser={this.updateUser}/>

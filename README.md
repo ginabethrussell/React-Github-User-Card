@@ -14,8 +14,6 @@ This project explored and practiced the concepts and techniques of `React Lifecy
 - Provides an input form inside the Header component to allow a new user to be searched and displayed
 - Utilizes `componentDidMount` and `componentDidUpdate` Lifecycle methods to control side effects (API calls to GitHub API)
 - Incorporates the `react-github-calendar` npm package to display user's GitHub contributions using the component - `<GithubCalendar user='user' />` 
-### Final Project Screenshot
-![site screenshot](https://raw.githubusercontent.com/ginabethrussell/React-Github-User-Card/main/public/site.png)
 
 ### Initial Project Plan
 

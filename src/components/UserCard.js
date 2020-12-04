@@ -2,12 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import Follower from './Follower';
 import './UserCard.css'
+import GitHubCalendar from 'react-github-calendar';
+
 
 class UserCard extends React.Component {
     
     render(){
         console.log('followers:', this.props.followers)
         console.log(this.props)
+        
         return(
             <div className='user-card-wrapper'>
                 <div className='user'>
@@ -25,6 +28,7 @@ class UserCard extends React.Component {
                             <li>Twitter username: {this.props.userData.twitter_username}</li>
                             <li><a href={this.props.userData.html_url}>GitHub Profile</a></li>
                         </ul>
+                        <GitHubCalendar username={this.props.userData.login} blockSize={10}/>
                     </div>
                 </div>
                 <h3>Followers: </h3>

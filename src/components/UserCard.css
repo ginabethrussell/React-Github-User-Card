@@ -14,7 +14,7 @@
     margin-top: 25px;
 }
 .user-title-wrapper {
-    width: 30%;
+    width: 40%;
 }
 .user-title-wrapper h2{
     
@@ -31,11 +31,16 @@
     justify-content: center;
     align-items: center;
 }
-
+.user-info-wrapper ul {
+    display: flex;
+    flex-wrap: wrap;
+}
 .user-info-wrapper li {
     list-style: none;
     font-size: 1.6rem;
     margin: 5px 0;
+    margin-right: 25px;
+    width: auto;
 }
 
 .user-info-wrapper li a {

@@ -4,7 +4,6 @@ import './Follower.css';
 class Follower extends React.Component {
   
     render(){
-        console.log(this.props.followerData)
         return (
             <div className='follower-wrapper'>
                 <h3> Username: {this.props.followerData.login}</h3>

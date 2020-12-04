@@ -10,11 +10,13 @@
     justify-content: space-between;
     align-items: center;
 }
+
 .header img {
     width: 35px;
     color: white;
     margin-right: 35px;
 }
+
 .header h1 {
     margin: 0;
     color: #000;
@@ -33,7 +35,6 @@
     font-size: 1.6rem;
 }
 
-
 .header button:hover {
-    background-color: crimson;
+    background-color: firebrick;
 }

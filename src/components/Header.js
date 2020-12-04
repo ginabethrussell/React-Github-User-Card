@@ -7,7 +7,7 @@ export default function Header(props){
     const { updateUser } = props;
 
     const handleChange = (e) => {
-        setSearchUser(e.target.value)
+        setSearchUser(e.target.value);
     }
 
     const searchForUser = (e) => {
@@ -18,10 +18,15 @@ export default function Header(props){
 
     return(
         <div className='header'>
-            <img src={ githubLogo} alt='github logo' />
+            <img src={ githubLogo } alt='github logo' />
             <h1>GitHub User Cards</h1>
-            <input type='text' name='newUser' value={searchUser} placeholder='...search for a new user' onChange={handleChange}/>
-            <button onClick={searchForUser}>Search</button>
+            <input type='text' 
+                name='newUser' 
+                value={ searchUser } 
+                placeholder='...search for a new user' 
+                onChange={ handleChange }
+            />
+            <button onClick={ searchForUser }>Search</button>
         </div>
     )
 }

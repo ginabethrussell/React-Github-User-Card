@@ -7,19 +7,22 @@
     margin-top: 25px;
     display: flex;
 }
+
 .user-card-wrapper h3 {
     font-size: 2rem;
     text-align: left;
     margin-left: 25px;
     margin-top: 25px;
 }
+
 .user-title-wrapper {
     width: 40%;
 }
-.user-title-wrapper h2{
-    
+
+.user-title-wrapper h2{   
     font-size: 1.8rem;
 }
+
 .user-title-wrapper img {
     width: 200px;
     border-radius: 50%;
@@ -31,10 +34,12 @@
     justify-content: center;
     align-items: center;
 }
+
 .user-info-wrapper ul {
     display: flex;
     flex-wrap: wrap;
 }
+
 .user-info-wrapper li {
     list-style: none;
     font-size: 1.6rem;

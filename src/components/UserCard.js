@@ -1,16 +1,12 @@
 import React from 'react';
-import axios from 'axios';
 import Follower from './Follower';
-import './UserCard.css'
 import GitHubCalendar from 'react-github-calendar';
+import './UserCard.css'
 
 
 class UserCard extends React.Component {
     
-    render(){
-        console.log('followers:', this.props.followers)
-        console.log(this.props)
-        
+    render() {  
         return(
             <div className='user-card-wrapper'>
                 <div className='user'>
@@ -33,7 +29,6 @@ class UserCard extends React.Component {
                 </div>
                 <h3>Followers: </h3>
                 <div className='followers-wrapper'>
-                    
                         {
                             this.props.followers.map(follower => (
                                 <Follower key={follower.avatar_url} followerData={follower} />
